@@ -5,7 +5,8 @@ project(raptor)
 # Find the required Libaries
 find_package(KDE4 REQUIRED)
 include(KDE4Defaults)
-find_package(Plasma REQUIRED)
+#this is depricated since 4.2, uncomment if you are using < 4.2 
+#find_package(Plasma REQUIRED)
 
 add_subdirectory(widget)
 add_subdirectory(engine)
@@ -39,7 +40,7 @@ set(raptor_SRCS
 # Now make sure all files get to the right place
 kde4_add_plugin(plasma_applet_raptor ${raptor_SRCS})
 target_link_libraries(plasma_applet_raptor 
-                      ${PLASMA_LIBS} ${KDE4_KDEUI_LIBS} ${KDE4_SOLID_LIBS} ${KDE4_KIO_LIBS} solidcontrol)
+                      ${KDE4_PLASMA_LIBS} ${KDE4_KDEUI_LIBS} ${KDE4_SOLID_LIBS} ${KDE4_KIO_LIBS} solidcontrol)
  
 install(TARGETS plasma_applet_raptor
         DESTINATION ${PLUGIN_INSTALL_DIR})

@@ -11,7 +11,7 @@ set(widget-test_SRC
 include_directories(${KDE4_INCLUDES})
 
 kde4_add_executable(widget-test ${widget-test_SRC})
-target_link_libraries(widget-test ${KDE4_KDEUI_LIBS})
+target_link_libraries(widget-test ${KDE4_KDEUI_LIBS} ${KDE4_PLASMA_LIBS})
 
 install(TARGETS widget-test DESTINATION ${BIN_INSTALL_DIR})
 # install(FILES widget-test.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
